@@ -1,0 +1,19 @@
+{
+  "name": "layerzero-self-reporting",
+  "version": "1.0.0",
+  "description": "You are here to report your own wallets in LayerZero? You wanna play this game? Rly?",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": ["layerzero", "self-reporting","sybil" ,"ethers", "axios"],
+  "author": "hedonismv",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "ethers": "^6.12.1",
+    "prettier": "^3.2.5"
+  }
+}
