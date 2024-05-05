@@ -1,6 +1,6 @@
 import { Wallet } from 'ethers'
 import { readFileSync } from 'fs'
-import axios from 'axios'
+import http from 'redaxios'
 
 const extractPrivateKeys = () => {
     return readFileSync('privateKeys.txt').toString().split(/\r?\n/)
@@ -17,7 +17,7 @@ const message = 'This is a sybil address'
 
             const signature = await wallet.signMessage(message)
 
-            await axios.post('https://sybil.layerzero.network/api/report', {
+            await http.post('https://sybil.layerzero.network/api/report', {
                 chainType: 'evm',
                 signature,
                 message,
@@ -26,7 +26,7 @@ const message = 'This is a sybil address'
 
             console.log('F', wallet.address)
         } catch (e) {
-            console.error("Couldn't report address: ", e.response.statusText)
+            console.error("Couldn't report address: ", e.statusText)
         }
     }
 
